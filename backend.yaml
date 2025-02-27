@@ -37,15 +37,15 @@
     ansible.builtin.unarchive: 
      src: /tmp/backend.zip
      dest: /app   
-     remote_src: true
+     remote_src: yes
 
   - name: install the dependencies
     ansible.builtin.command: npm install
     args:
       chdir: /app
 
-  - name: create backend service
-    ansible.builtin.service:
+  - name: copy backend service
+    ansible.builtin.copy:
      src: backend.service
      dest: /etc/systemd/system/backend.service
 
