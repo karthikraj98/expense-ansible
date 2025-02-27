@@ -6,7 +6,7 @@
    login_host: mysql.learningdevops.shop
   tasks: 
   - name: ansible to install pymysql
-    ansible.builtin.pip3:
+    ansible.builtin.pip:
      name: 
      - PyMySQL
     executable: pip3.9
