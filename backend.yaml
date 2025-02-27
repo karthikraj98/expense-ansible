@@ -63,5 +63,10 @@
       target: /app/schema/backend.sql
       name: all
       state: import
-
+   
+  - name: deamon-reload  #Make sure a service unit is running
+    ansible.builtin.systemd_service:
+      daemon_reload: true
+      state: started
+      name: backend
       
