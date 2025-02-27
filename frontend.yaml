@@ -1,0 +1,12 @@
+- name: frontend configuration
+  hosts: frontend
+  become: yes
+  tasks:
+  - name: install nginx
+    ansible.builtin.command: dnf install nginx -y
+    state: present
+
+  - name: nginx service
+    ansible.builtin.service:
+    state: restarted
+    enabled: yes  
