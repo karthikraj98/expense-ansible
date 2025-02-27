@@ -3,11 +3,16 @@
   become: yes
   tasks:
   - name: install nginx
-    ansible.builtin.package: dnf install nginx -y
-    name: nginx
-    state: present
+    ansible.builtin.package:
+      name: nginx
+      state: present
 
   - name: nginx service
     ansible.builtin.service:
      state: restarted
      enabled: yes  
+
+  # - name: Remove file (delete file)
+  #   ansible.builtin.file:
+  #    path: /etc/foo.txt
+  #    state: absent   
