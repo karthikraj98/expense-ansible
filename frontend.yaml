@@ -6,18 +6,15 @@
     ansible.builtin.package:
       name: nginx
       state: present
-
   - name: nginx service
     ansible.builtin.service:
      name: nginx
      state: started
      enabled: yes  
-
-  - name: Remove file (delete file)
+  - name: Remove html directory
     ansible.builtin.file:
      path: /usr/share/nginx/html
      state: absent   
-
   - name: create a index   
     ansible.builtin.file:
      path: /usr/share/nginx/html
@@ -34,5 +31,13 @@
      dest: /usr/share/nginx/html 
      remote_src: yes
     
-
+  - name: copy expense.conf
+    anisble.builtin.copy
+    src: expense.conf
+    dest: /etc/nginx/default.d/expense.conf
+    
+  - name: restart the nginx
+    ansible.builtin.service:
+    name: nginx
+    state: restarted   
 
