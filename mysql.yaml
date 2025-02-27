@@ -5,10 +5,10 @@
    mysql_root_password: ExpenseApp@1
    login_host: mysql.learningdevops.shop
   tasks: 
-  - name: ansible to install PyMysql
+  - name: ansible to install pymysql
     ansible.builtin.pip3:
      name: 
-     - PyMysql
+     - PyMySQL
     executable: pip3.9
 
   - name: install mysql
