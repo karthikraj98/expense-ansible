@@ -3,10 +3,11 @@
   become: yes
   tasks:
   - name: install nginx
-    ansible.builtin.command: dnf install nginx -y
+    ansible.builtin.package: dnf install nginx -y
+    name: nginx
     state: present
 
   - name: nginx service
     ansible.builtin.service:
-    state: restarted
-    enabled: yes  
+     state: restarted
+     enabled: yes  
