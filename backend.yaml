@@ -43,4 +43,10 @@
     ansible.builtin.command: npm install
     args:
       chdir: /app
+
+  - name: create backend service
+    ansible.builtin.service:
+    src: backend.service
+    dest: /etc/systemd/system/backend.service
+
       
