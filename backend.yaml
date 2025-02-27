@@ -64,9 +64,9 @@
       name: all
       state: import
    
-  - name: deamon-reload  #Make sure a service unit is running
+  - name: daemon-reload  #Make sure a service unit is running
     ansible.builtin.systemd_service:
       daemon_reload: true
-      state: started
+      state: restarted
       name: backend
       
