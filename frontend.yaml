@@ -9,7 +9,7 @@
 
   - name: nginx service
     ansible.builtin.service:
-     state: restarted
+     state: started
      enabled: yes  
 
   # - name: Remove file (delete file)
