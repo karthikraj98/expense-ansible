@@ -11,16 +11,6 @@
      - PyMySQL
      executable: pip3.9
 
-  # vars:
-  #  mysql_root_password: ExpenseApp@1
-  #  login_host: mysql.daws81s.online
-  # tasks:
-  # - name: ansible to install pymysql
-  #   ansible.builtin.pip:
-  #     name:
-  #     - PyMySQL
-  #     executable: pip3.9
-
   - name: install mysql
     ansible.builtin.package:
      name: mysql-server
@@ -37,8 +27,8 @@
      login_user: root
      login_password: " {{ mysql_root_password }} "   
      login_host: " {{ login_host}} "
-     ignore_errors: true
-     register: mysql_info
+    ignore_errors: true
+    register: mysql_info
 
   - name: print mysql info
     ansible.builtin.debug:
