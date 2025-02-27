@@ -18,3 +18,18 @@
     loop:
     - nodejs
     - mysql
+
+  - name: create user
+    ansible.builtin.user:
+    name: expense
+
+  - name: create the directory
+    ansible.builtin.file:
+     name: /app
+     state: directory  
+
+  - name: download the code
+    ansible.builtin.get_url:
+    url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip
+    dest: /tmp/backend.zip
+      
