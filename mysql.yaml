@@ -1,4 +1,4 @@
-- name: install mysql
+- name: mysql configuration
   hosts: mysql
   become: yes
   vars: 
