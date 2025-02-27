@@ -13,8 +13,8 @@
 
   - name: install nodejs and mysql
     ansible.builtin.package: 
-    - name: " {{ item }} "
-      state: present
+     - name: " {{ item }} "
+       state: present
     loop:
     - nodejs
     - mysql
